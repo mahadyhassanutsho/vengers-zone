@@ -199,3 +199,22 @@ svg {
 .user-profile > .user-img {
   border-radius: 50%;
 }
+
+@media screen and (width <= 576px) {
+  .main-nav {
+    flex-wrap: wrap;
+  }
+
+  .main-nav > :nth-child(1) {
+    order: 1;
+  }
+
+  .main-nav > :nth-child(2) {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .main-nav > :nth-child(3) {
+    order: 2;
+  }
+}
