@@ -253,6 +253,10 @@ header {
 }
 
 @media screen and (width <= 576px) {
+  header {
+    position: inherit;
+  }
+
   .main-nav {
     flex-wrap: wrap;
   }
@@ -268,5 +272,9 @@ header {
 
   .main-nav > :nth-child(3) {
     order: 2;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
   }
 }
