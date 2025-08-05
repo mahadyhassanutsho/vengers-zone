@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500&display=swap");
+
+:root {
+  /* Backgrounds */
+  --color-bg-dark: #0b0c10;
+  --color-bg-card: #1f1f1f;
+  --color-overlay: rgba(0, 0, 0, 0.65);
+
+  /* Primary Marvel Red */
+  --color-accent: #ed1d24;
+  --color-accent-hover: #ff2a30;
+
+  /* Vibranium Silver */
+  --color-secondary: #c5c6c7;
+
+  /* Text Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a3a3a3;
+
+  /* Font Sizes */
+  --fs-hero: clamp(2.5rem, 5vw, 4rem); /* Hero Titles */
+  --fs-h1: 2.25rem; /* 36px */
+  --fs-h2: 1.875rem; /* 30px */
+  --fs-h3: 1.5rem; /* 24px */
+  --fs-h4: 1.25rem; /* 20px */
+  --fs-body-lg: 1.125rem; /* 18px */
+  --fs-body: 1rem; /* 16px */
+  --fs-body-sm: 0.875rem; /* 14px */
+  --fs-caption: 0.75rem; /* 12px */
+
+  /* Font Weights */
+  --fw-bold: 700;
+  --fw-semi: 600;
+  --fw-medium: 500;
+  --fw-regular: 400;
+  --fw-light: 300;
+
+  /* Font Families */
+  --ff-bebas: "Bebas Neue", sans-serif;
+
+  /* Button Gradient */
+  --gradient-button: linear-gradient(135deg, #ed1d24, #ff2a30);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-primary);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-bebas);
+  letter-spacing: 1px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.arrow-top {
+  position: absolute;
+  top: -0.5rem;
+  left: 0.5rem;
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid var(--color-bg-card);
+}
+
+.arrow-left {
+  position: absolute;
+  top: 0.5rem;
+  left: -0.5rem;
+  width: 0;
+  height: 0;
+  border-top: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid transparent;
+  border-right: 0.5rem solid var(--color-bg-card);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+
+.logo {
+  font-family: var(--ff-bebas);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+  font-family: var(--ff-bebas);
+  font-size: var(--fs-h4);
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: transform 0.5s, color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: var(--color-text-secondary);
+  transform: scaleX(0.95);
+}
+
+.sub-nav {
+  padding: 1rem;
+  border-radius: 0.25rem;
+  position: absolute;
+  left: 0;
+  top: 2rem;
+  background-color: var(--color-bg-card);
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(1rem);
+  transition: transform 0.75s, opacity 0.75s ease-in-out;
+
+  z-index: 100; /* So that it's visible above other contents */
+}
+
+.nav-item:has(.sub-nav):hover .sub-nav {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sub-nav > .nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-hint {
+  position: absolute;
+  top: 0;
+  left: 5rem;
+  width: max-content;
+  background-color: var(--color-bg-card);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-1rem);
+  transition: transform 0.5s, opacity 0.5s ease-in-out;
+
+  z-index: 100; /* So that it's visible above other contents */
+}
+
+.sub-nav .nav-item:has(.nav-hint):hover .nav-hint {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.user-profile {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.user-profile > .user-img {
+  border-radius: 50%;
+}
