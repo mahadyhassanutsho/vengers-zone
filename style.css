@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@400;500;600&display=swap");
 
 :root {
   /* Backgrounds */
@@ -18,7 +18,7 @@
   --color-text-secondary: #a3a3a3;
 
   /* Font Sizes */
-  --fs-hero: clamp(2.5rem, 5vw, 4rem); /* Hero Titles */
+  --fs-hero: clamp(2rem, 4vw, 3.25rem); /* Hero Titles */
   --fs-h1: 2.25rem; /* 36px */
   --fs-h2: 1.875rem; /* 30px */
   --fs-h3: 1.5rem; /* 24px */
@@ -37,6 +37,7 @@
 
   /* Font Families */
   --ff-bebas: "Bebas Neue", sans-serif;
+  --ff-raleway: "Raleway", sans-serif;
 
   /* Button Gradient */
   --gradient-button: linear-gradient(135deg, #ed1d24, #ff2a30);
@@ -49,7 +50,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--ff-raleway);
   background-color: var(--color-bg-dark);
   color: var(--color-text-primary);
 }
@@ -67,10 +68,16 @@ a {
 }
 
 img,
-svg {
+svg,
+video {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+header {
+  position: relative;
+  padding: 1rem;
 }
 
 .wrapper {
@@ -99,6 +106,18 @@ svg {
   border-top: 0.5rem solid transparent;
   border-bottom: 0.5rem solid transparent;
   border-right: 0.5rem solid var(--color-bg-card);
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  filter: brightness(0.25) contrast(1.25) saturate(1.25) opacity(0.5);
+  mix-blend-mode: screen;
+  z-index: -1;
+
+  object-fit: cover;
 }
 
 .main-nav {
@@ -193,11 +212,44 @@ svg {
 .user-profile {
   width: 3rem;
   height: 3rem;
-  cursor: pointer;
+  cursor: poraleway;
 }
 
 .user-profile > .user-img {
   border-radius: 50%;
+}
+
+.hero {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-title {
+  font-size: var(--fs-hero);
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: var(--fs-h4);
+  color: var(--color-text-secondary);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.hero-reel {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.hero-reel > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
 }
 
 @media screen and (width <= 576px) {
