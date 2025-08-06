@@ -4,6 +4,7 @@
   /* Backgrounds */
   --color-bg-dark: #0b0c10;
   --color-bg-card: #1f1f1f;
+  --color-bg-card-transparent: #1f1f1f99;
   --color-overlay: rgba(0, 0, 0, 0.65);
 
   /* Primary Marvel Red */
@@ -53,6 +54,7 @@ body {
   font-family: var(--ff-raleway);
   background-color: var(--color-bg-dark);
   color: var(--color-text-primary);
+  overflow: hidden;
 }
 
 h1,
@@ -75,13 +77,8 @@ video {
   height: 100%;
 }
 
-header {
-  position: relative;
-  padding: 1rem;
-}
-
 .wrapper {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -164,7 +161,7 @@ header {
   position: absolute;
   left: 0;
   top: 2rem;
-  background-color: var(--color-bg-card);
+  background-color: var(--color-bg-card-transparent);
 
   visibility: hidden;
   opacity: 0;
@@ -191,7 +188,7 @@ header {
   top: 0;
   left: 5rem;
   width: max-content;
-  background-color: var(--color-bg-card);
+  background-color: var(--color-bg-card-transparent);
   padding: 0.5rem;
   border-radius: 0.25rem;
 
@@ -212,7 +209,7 @@ header {
 .user-profile {
   width: 3rem;
   height: 3rem;
-  cursor: poraleway;
+  cursor: pointer;
 }
 
 .user-profile > .user-img {
@@ -242,7 +239,7 @@ header {
 .hero-reel {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1/1;
 }
 
 .hero-reel > video {
@@ -253,10 +250,6 @@ header {
 }
 
 @media screen and (width <= 576px) {
-  header {
-    position: inherit;
-  }
-
   .main-nav {
     flex-wrap: wrap;
   }
