@@ -202,6 +202,7 @@ button {
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  cursor: pointer;
   transition: transform 0.5s, color 0.3s ease-in-out;
 }
 
