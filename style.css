@@ -294,17 +294,29 @@ button {
   overflow-wrap: break-word;
 }
 
-.hero-reel {
+.hero-slider {
+  position: relative;
   width: 100%;
   height: auto;
   aspect-ratio: 1/1;
+  overflow: hidden;
 }
 
-.hero-reel > video {
-  width: 100%;
-  height: 100%;
+.hero-slider > img {
+  position: absolute;
+  top: 0;
+  left: 0;
   object-fit: cover;
   border-radius: 0.5rem;
+
+  opacity: 0;
+  transform: translateX(-10rem);
+  transition: transform 1s, opacity 0.75s ease-in-out;
+}
+
+.hero-slider img.active {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 @media screen and (width <= 767px) {
