@@ -119,6 +119,7 @@ button {
   max-width: 1440px;
   margin: 0 auto;
   padding: 1rem;
+  overflow-x: hidden;
 }
 
 .arrow-top {
@@ -315,7 +316,7 @@ button {
   transition: transform 1s, opacity 0.75s ease-in-out;
 }
 
-.hero-slider img.active {
+.hero-slider > img.active {
   opacity: 1;
   transform: translateX(0);
 }
