@@ -44,6 +44,36 @@
   --gradient-button: linear-gradient(135deg, #ed1d24, #ff2a30);
 }
 
+@keyframes steady-power-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 8px var(--color-accent), 0 0 15px var(--color-accent);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 14px var(--color-accent), 0 0 28px var(--color-accent);
+    transform: scale(1.03);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-1px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -54,7 +84,7 @@ body {
   font-family: var(--ff-raleway);
   background-color: var(--color-bg-dark);
   color: var(--color-text-primary);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 h1,
@@ -77,10 +107,18 @@ video {
   height: 100%;
 }
 
+button {
+  background-color: inherit;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 1rem;
 }
 
 .arrow-top {
@@ -115,6 +153,23 @@ video {
   z-index: -1;
 
   object-fit: cover;
+}
+
+.cta {
+  padding: 0.75rem 1rem;
+  font-family: var(--ff-bebas);
+  font-size: var(--fs-h3);
+  background-color: var(--color-accent);
+  border: 0.01rem solid var(--color-accent);
+  border-radius: 0.25rem;
+  transition: background-color 0.5s, color 0.25s ease-in-out;
+  animation: shake 1s ease-in-out infinite;
+}
+
+.cta:hover {
+  background-color: transparent;
+  color: var(--color-accent);
+  animation-play-state: paused;
 }
 
 .main-nav {
@@ -224,9 +279,12 @@ video {
   gap: 2rem;
 }
 
+.hero :first-child > *:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
 .hero-title {
   font-size: var(--fs-hero);
-  margin-bottom: 1rem;
 }
 
 .hero-subtitle {
@@ -249,7 +307,7 @@ video {
   border-radius: 0.5rem;
 }
 
-@media screen and (width <= 576px) {
+@media screen and (width <= 767px) {
   .main-nav {
     flex-wrap: wrap;
   }
@@ -269,5 +327,9 @@ video {
 
   .hero {
     grid-template-columns: 1fr;
+  }
+
+  .hero > :last-child {
+    order: -1;
   }
 }
