@@ -339,6 +339,11 @@ button {
     order: 2;
   }
 
+  .sub-nav .nav-item:has(.nav-hint):hover .nav-hint {
+    visibility: hidden;
+    opacity: 0;
+  }
+
   .hero {
     grid-template-columns: 1fr;
   }
