@@ -122,10 +122,21 @@ button {
   overflow-x: hidden;
 }
 
-.arrow-top {
+.arrow-top-left {
   position: absolute;
   top: -0.5rem;
   left: 0.5rem;
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid var(--color-bg-card);
+}
+
+.arrow-top-right {
+  position: absolute;
+  top: -0.5rem;
+  right: 0.5rem;
   width: 0;
   height: 0;
   border-left: 0.5rem solid transparent;
@@ -264,6 +275,7 @@ button {
 }
 
 .user-profile {
+  position: relative;
   width: 3rem;
   height: 3rem;
   cursor: pointer;
@@ -271,6 +283,56 @@ button {
 
 .user-profile > .user-img {
   border-radius: 50%;
+}
+
+.user-settings {
+  position: absolute;
+  top: 3.5rem;
+  right: 0;
+  padding: 1rem;
+  background-color: var(--color-bg-card-transparent);
+  border-radius: 0.25rem;
+
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+
+  cursor: default;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-1rem);
+  transition: transform 0.5s, opacity 0.5s ease-in-out;
+
+  z-index: 100; /* So that it's visible above other contents */
+}
+
+.user-profile:hover .user-settings {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.user-settings .username {
+  font-family: var(--ff-bebas);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-medium);
+}
+
+.user-settings .user-email {
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-medium);
+}
+
+.user-settings .user-edit {
+  width: 1.5rem;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.user-settings .user-edit:hover {
+  opacity: 0.5;
 }
 
 .hero {
