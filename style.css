@@ -132,7 +132,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  gap: 0;
+  gap: 5vh;
 }
 
 .arrow-top-left {
@@ -418,6 +418,12 @@ button {
 .section-subtitle {
   font-size: var(--fs-body-lg);
   font-weight: var(--fw-light);
+}
+
+@media screen and (width <= 1440px) {
+  .header {
+    gap: 10vh;
+  }
 }
 
 @media screen and (width <= 767px) {
