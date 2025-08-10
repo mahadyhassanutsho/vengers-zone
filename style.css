@@ -80,6 +80,10 @@
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--ff-raleway);
   background-color: var(--color-bg-dark);
@@ -118,8 +122,17 @@ button {
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 1rem;
-  overflow-x: hidden;
+  padding-inline: 2.5rem;
+}
+
+.header {
+  position: relative;
+  padding-block: 2.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 0;
 }
 
 .arrow-top-left {
@@ -158,13 +171,16 @@ button {
 .bg-video {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
 
   filter: brightness(0.25) contrast(1.25) saturate(1.25) opacity(0.5);
   mix-blend-mode: screen;
   z-index: -1;
-
-  object-fit: cover;
 }
 
 .cta {
@@ -188,7 +204,6 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 0;
 }
 
 .logo {
@@ -276,8 +291,9 @@ button {
 
 .user-profile {
   position: relative;
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 0.5rem;
   cursor: pointer;
 }
 
@@ -336,7 +352,6 @@ button {
 }
 
 .hero {
-  margin-top: 5rem;
   display: grid;
   grid-template-columns: 1.25fr 1fr;
   align-items: center;
@@ -383,7 +398,38 @@ button {
   transform: translateX(0);
 }
 
+.section {
+  margin-top: 2.5rem;
+}
+
+.section-tag {
+  color: var(--color-accent);
+  font-family: var(--ff-bebas);
+  font-size: var(--fs-body-lg);
+  font-weight: var(--fw-light);
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-family: var(--ff-bebas);
+  font-size: var(--fs-hero);
+}
+
+.section-subtitle {
+  font-size: var(--fs-body-lg);
+  font-weight: var(--fw-light);
+}
+
 @media screen and (width <= 767px) {
+  .wrapper {
+    padding-inline: 1rem;
+  }
+
+  .header {
+    justify-content: start;
+    gap: 2.5rem;
+  }
+
   .main-nav {
     flex-wrap: wrap;
   }
