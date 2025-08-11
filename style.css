@@ -132,7 +132,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  gap: 5vh;
+  gap: 10vh;
 }
 
 .arrow-top-left {
@@ -197,6 +197,22 @@ button {
 .cta:hover {
   background-color: transparent;
   color: var(--color-accent);
+  animation-play-state: paused;
+}
+
+.cta-sm {
+  padding: 0.5rem 0.75rem;
+  font-family: var(--ff-bebas);
+  font-size: var(--fs-h4);
+  background-color: var(--color-accent);
+  border: 0.01rem solid var(--color-accent);
+  border-radius: 0.25rem;
+  transition: border-color 0.5s;
+  animation: shake 1s ease-in-out infinite;
+}
+
+.cta-sm:hover {
+  border-color: var(--color-text-secondary);
   animation-play-state: paused;
 }
 
@@ -399,7 +415,7 @@ button {
 }
 
 .section {
-  margin-top: 2.5rem;
+  padding-block: 2.5rem;
 }
 
 .section-tag {
@@ -420,9 +436,62 @@ button {
   font-weight: var(--fw-light);
 }
 
+.film-cards {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.film-card {
+  position: relative;
+  min-width: 300px;
+  height: auto;
+  aspect-ratio: 9 / 12;
+  border-radius: 0.25rem;
+  overflow: hidden;
+
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+  gap: 0.25rem;
+}
+
+.film-card > *:not(.film-card-img) {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(1rem);
+  transition: transform 0.5s ease-in-out 0.25s, opacity 0.5s ease-in-out 0.25s,
+    visibility 0s linear 1s;
+}
+
+.film-card:hover > *:not(.film-card-img) {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.film-card-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  transform: scale(1.25);
+  transition: transform 0.35s ease-in-out;
+
+  z-index: -10;
+}
+
+.film-card:hover .film-card-img {
+  transform: scale(1);
+}
+
 @media screen and (width <= 1440px) {
   .header {
-    gap: 10vh;
+    gap: 15vh;
   }
 }
 
@@ -464,5 +533,9 @@ button {
 
   .hero > :last-child {
     order: -1;
+  }
+
+  .film-cards {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
