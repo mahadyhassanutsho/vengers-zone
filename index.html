@@ -13,240 +13,250 @@
     <script defer src="./script.js"></script>
   </head>
   <body>
-    <div class="wrapper">
-      <header class="header">
-        <video
-          autoplay
-          muted
-          loop
-          src="./assets/marvel-opening-theme-partial.mp4"
-          class="bg-video"
-        ></video>
-
-        <nav class="main-nav">
-          <a href="" class="logo">vengers zone</a>
-
-          <ul class="nav-list">
-            <li class="nav-item">
-              <a href="#films" class="nav-link">Films</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link">News</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link">Rumours</a>
-            </li>
-            <li class="nav-item">
-              <p class="nav-link">
-                <span>Phases</span>
-                <svg
-                  width="32px"
-                  height="32px"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  stroke="#ffffff"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
-                      fill="#ffffff"
-                    ></path>
-                  </g>
-                </svg>
-              </p>
-              <nav class="sub-nav">
-                <div class="arrow-top-left"></div>
-                <ul class="nav-list">
-                  <li class="nav-item">
-                    <a href="" class="nav-link">Phase 1</a>
-                    <div class="nav-hint">
-                      <div class="arrow-left"></div>
-                      <p>Build-up to The Avenger</p>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a href="" class="nav-link">Phase 2</a>
-                    <div class="nav-hint">
-                      <div class="arrow-left"></div>
-                      <p>Aftermath & Expansion</p>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a href="" class="nav-link">Phase 3</a>
-                    <div class="nav-hint">
-                      <div class="arrow-left"></div>
-                      <p>Civil War to Endgame</p>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a href="" class="nav-link">Phase 4</a>
-                    <div class="nav-hint">
-                      <div class="arrow-left"></div>
-                      <p>Post-Endgame Rebuilding & Multiverse</p>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a href="" class="nav-link">Phase 5</a>
-                    <div class="nav-hint">
-                      <div class="arrow-left"></div>
-                      <p>Multiverse Saga Continuation</p>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a href="" class="nav-link">Phase 6</a>
-                    <div class="nav-hint">
-                      <div class="arrow-left"></div>
-                      <p>The Multiverse War Begins</p>
-                    </div>
-                  </li>
-                </ul>
-              </nav>
-            </li>
-          </ul>
-
-          <div class="user-profile">
-            <img
-              src="./assets/spider-man.svg"
-              alt="User Profile"
-              class="user-img"
-            />
-            <div class="user-settings">
-              <div class="arrow-top-right"></div>
-              <div>
-                <p class="username">Spider Man</p>
-                <p class="user-email">spider.man@earth.com</p>
-              </div>
-              <img class="user-edit" src="./assets/gear.svg" alt="Settings" />
-            </div>
-          </div>
-        </nav>
-
-        <main class="hero">
-          <div>
-            <h1 class="hero-title">
-              Enter the Marvel Universe
-              <br />
-              Discover Heroes and Storyline
-            </h1>
-            <p class="hero-subtitle">
-              Explore detailed movie breakdowns, character backstories, phase
-              timelines, and fan theories — all in one ultimate destination
-              built by fans, for fans. Welcome to VengersZone, your gateway to
-              everything Marvel.
-            </p>
-            <button href="" class="cta">Unlock the Multiverse</button>
-          </div>
-          <div class="hero-slider">
-            <img src="./assets/captain-america.jpg" alt="Captain America" />
-            <img src="./assets/red-vengers.jpg" alt="Red Vengers" />
-            <img src="./assets/cap-vs-iron-man.jpg" alt="Civil War" />
-            <img src="./assets/dr-strange.jpg" alt="Dr. Strange" />
-            <img
-              src="./assets/guardians-of-the-galaxy.jpg"
-              alt="Guardians of the Galaxy"
-            />
-            <img src="./assets/avengers.jpg" alt="Avengers" />
-            <img src="./assets/civil-war.jpg" alt="Civil War" />
-          </div>
-        </main>
-      </header>
+    <div class="loader-container">
+      <div class="loader"></div>
     </div>
 
-    <div class="wrapper">
-      <section id="films" class="section">
-        <p class="section-tag">Latest Films</p>
-        <h1 class="section-title">
-          Unleash the Latest Marvel Cinematic Adventures
-        </h1>
-        <p class="section-subtitle">
-          Discover new heroes and epic stories from the newest Marvel films —
-          fresh updates, trailers, and more!
-        </p>
+    <div class="page-content">
+      <div class="wrapper">
+        <header class="header">
+          <video
+            autoplay
+            muted
+            loop
+            src="./assets/marvel-opening-theme-partial.mp4"
+            class="bg-video"
+          ></video>
 
-        <div class="film-cards">
-          <div class="film-card">
-            <img
-              src="./assets/captain-america.jpg"
-              alt="Captain America: The First Avenger"
-              class="film-card-img"
-            />
-            <h2 class="film-card-title">Captain America: The First Avenger</h2>
-            <button class="cta-sm">Know More</button>
+          <nav class="main-nav">
+            <a href="" class="logo">vengers zone</a>
+
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="#films" class="nav-link">Films</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">News</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">Rumours</a>
+              </li>
+              <li class="nav-item">
+                <p class="nav-link">
+                  <span>Phases</span>
+                  <svg
+                    width="32px"
+                    height="32px"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    stroke="#ffffff"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
+                        fill="#ffffff"
+                      ></path>
+                    </g>
+                  </svg>
+                </p>
+                <nav class="sub-nav">
+                  <div class="arrow-top-left"></div>
+                  <ul class="nav-list">
+                    <li class="nav-item">
+                      <a href="" class="nav-link">Phase 1</a>
+                      <div class="nav-hint">
+                        <div class="arrow-left"></div>
+                        <p>Build-up to The Avenger</p>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a href="" class="nav-link">Phase 2</a>
+                      <div class="nav-hint">
+                        <div class="arrow-left"></div>
+                        <p>Aftermath & Expansion</p>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a href="" class="nav-link">Phase 3</a>
+                      <div class="nav-hint">
+                        <div class="arrow-left"></div>
+                        <p>Civil War to Endgame</p>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a href="" class="nav-link">Phase 4</a>
+                      <div class="nav-hint">
+                        <div class="arrow-left"></div>
+                        <p>Post-Endgame Rebuilding & Multiverse</p>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a href="" class="nav-link">Phase 5</a>
+                      <div class="nav-hint">
+                        <div class="arrow-left"></div>
+                        <p>Multiverse Saga Continuation</p>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a href="" class="nav-link">Phase 6</a>
+                      <div class="nav-hint">
+                        <div class="arrow-left"></div>
+                        <p>The Multiverse War Begins</p>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+
+            <div class="user-profile">
+              <img
+                src="./assets/spider-man.svg"
+                alt="User Profile"
+                class="user-img"
+              />
+              <div class="user-settings">
+                <div class="arrow-top-right"></div>
+                <div>
+                  <p class="username">Spider Man</p>
+                  <p class="user-email">spider.man@earth.com</p>
+                </div>
+                <img class="user-edit" src="./assets/gear.svg" alt="Settings" />
+              </div>
+            </div>
+          </nav>
+
+          <main class="hero">
+            <div>
+              <h1 class="hero-title">
+                Enter the Marvel Universe
+                <br />
+                Discover Heroes and Storyline
+              </h1>
+              <p class="hero-subtitle">
+                Explore detailed movie breakdowns, character backstories, phase
+                timelines, and fan theories — all in one ultimate destination
+                built by fans, for fans. Welcome to VengersZone, your gateway to
+                everything Marvel.
+              </p>
+              <button href="" class="cta">Unlock the Multiverse</button>
+            </div>
+            <div class="hero-slider">
+              <img src="./assets/captain-america.jpg" alt="Captain America" />
+              <img src="./assets/red-vengers.jpg" alt="Red Vengers" />
+              <img src="./assets/cap-vs-iron-man.jpg" alt="Civil War" />
+              <img src="./assets/dr-strange.jpg" alt="Dr. Strange" />
+              <img
+                src="./assets/guardians-of-the-galaxy.jpg"
+                alt="Guardians of the Galaxy"
+              />
+              <img src="./assets/avengers.jpg" alt="Avengers" />
+              <img src="./assets/civil-war.jpg" alt="Civil War" />
+            </div>
+          </main>
+        </header>
+      </div>
+
+      <div class="wrapper">
+        <section id="films" class="section">
+          <p class="section-tag">Latest Films</p>
+          <h1 class="section-title">
+            Unleash the Latest Marvel Cinematic Adventures
+          </h1>
+          <p class="section-subtitle">
+            Discover new heroes and epic stories from the newest Marvel films —
+            fresh updates, trailers, and more!
+          </p>
+
+          <div class="film-cards">
+            <div class="film-card">
+              <img
+                src="./assets/captain-america.jpg"
+                alt="Captain America: The First Avenger"
+                class="film-card-img"
+              />
+              <h2 class="film-card-title">
+                Captain America: The First Avenger
+              </h2>
+              <button class="cta-sm">Know More</button>
+            </div>
+            <div class="film-card">
+              <img
+                src="./assets/guardians-of-the-galaxy.jpg"
+                alt="Guardians of the Galaxy"
+                class="film-card-img"
+              />
+              <h2 class="film-card-title">Guardians of the Galaxy</h2>
+              <button class="cta-sm">Know More</button>
+            </div>
+            <div class="film-card">
+              <img
+                src="./assets/civil-war.jpg"
+                alt="Civil War"
+                class="film-card-img"
+              />
+              <h2 class="film-card-title">Civil War</h2>
+              <button class="cta-sm">Know More</button>
+            </div>
+            <div class="film-card">
+              <img
+                src="./assets/avengers.jpg"
+                alt="Avengers"
+                class="film-card-img"
+              />
+              <h2 class="film-card-title">Avengers</h2>
+              <button class="cta-sm">Know More</button>
+            </div>
+            <div class="film-card">
+              <img
+                src="./assets/dr-strange.jpg"
+                alt="Doctor Strange"
+                class="film-card-img"
+              />
+              <h2 class="film-card-title">Doctor Strange</h2>
+              <button class="cta-sm">Know More</button>
+            </div>
+            <div class="film-card">
+              <img
+                src="./assets/captain-america.jpg"
+                alt="Captain America: The First Avenger"
+                class="film-card-img"
+              />
+              <h2 class="film-card-title">
+                Captain America: The First Avenger
+              </h2>
+              <button class="cta-sm">Know More</button>
+            </div>
+            <div class="film-card">
+              <img
+                src="./assets/guardians-of-the-galaxy.jpg"
+                alt="Guardians of the Galaxy"
+                class="film-card-img"
+              />
+              <h2 class="film-card-title">Guardians of the Galaxy</h2>
+              <button class="cta-sm">Know More</button>
+            </div>
+            <div class="film-card">
+              <img
+                src="./assets/dr-strange.jpg"
+                alt="Doctor Strange"
+                class="film-card-img"
+              />
+              <h2 class="film-card-title">Doctor Strange</h2>
+              <button class="cta-sm">Know More</button>
+            </div>
           </div>
-          <div class="film-card">
-            <img
-              src="./assets/guardians-of-the-galaxy.jpg"
-              alt="Guardians of the Galaxy"
-              class="film-card-img"
-            />
-            <h2 class="film-card-title">Guardians of the Galaxy</h2>
-            <button class="cta-sm">Know More</button>
-          </div>
-          <div class="film-card">
-            <img
-              src="./assets/civil-war.jpg"
-              alt="Civil War"
-              class="film-card-img"
-            />
-            <h2 class="film-card-title">Civil War</h2>
-            <button class="cta-sm">Know More</button>
-          </div>
-          <div class="film-card">
-            <img
-              src="./assets/avengers.jpg"
-              alt="Avengers"
-              class="film-card-img"
-            />
-            <h2 class="film-card-title">Avengers</h2>
-            <button class="cta-sm">Know More</button>
-          </div>
-          <div class="film-card">
-            <img
-              src="./assets/dr-strange.jpg"
-              alt="Doctor Strange"
-              class="film-card-img"
-            />
-            <h2 class="film-card-title">Doctor Strange</h2>
-            <button class="cta-sm">Know More</button>
-          </div>
-          <div class="film-card">
-            <img
-              src="./assets/captain-america.jpg"
-              alt="Captain America: The First Avenger"
-              class="film-card-img"
-            />
-            <h2 class="film-card-title">Captain America: The First Avenger</h2>
-            <button class="cta-sm">Know More</button>
-          </div>
-          <div class="film-card">
-            <img
-              src="./assets/guardians-of-the-galaxy.jpg"
-              alt="Guardians of the Galaxy"
-              class="film-card-img"
-            />
-            <h2 class="film-card-title">Guardians of the Galaxy</h2>
-            <button class="cta-sm">Know More</button>
-          </div>
-          <div class="film-card">
-            <img
-              src="./assets/dr-strange.jpg"
-              alt="Doctor Strange"
-              class="film-card-img"
-            />
-            <h2 class="film-card-title">Doctor Strange</h2>
-            <button class="cta-sm">Know More</button>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </body>
 </html>

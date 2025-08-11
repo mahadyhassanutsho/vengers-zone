@@ -74,6 +74,12 @@
   }
 }
 
+@keyframes spinner {
+  to {
+    transform: rotate(1turn) scale(1.2);
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -117,6 +123,48 @@ button {
   color: inherit;
   border: none;
   cursor: pointer;
+}
+
+.loader-container {
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-bg-dark);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+
+  transition: opacity 0.5s ease-in-out, visibility 0.75s linear;
+}
+
+.loader-container.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader {
+  height: 4rem;
+  width: 4rem;
+  border: 0.4rem solid var(--color-accent);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-radius: 50%;
+
+  animation: spinner 1s infinite alternate ease-in-out;
+}
+
+.page-content {
+  opacity: 0;
+  transform: translateY(-2.5rem);
+  transition: opacity 0.5s, transform 0.5s ease-in-out;
+}
+
+.page-content.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .wrapper {
