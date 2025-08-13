@@ -523,11 +523,14 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+  justify-items: center;
 }
 
 .film-card {
   position: relative;
-  min-width: 300px;
+  width: 100%;
+  max-width: 480px;
+  /* min-width: 300px; */
   height: auto;
   aspect-ratio: 9 / 12;
   border-radius: 0.25rem;
@@ -575,6 +578,10 @@ button {
   .header {
     gap: 15vh;
   }
+
+  .film-cards {
+    grid-template-columns: repeat(auto-fit, 1fr);
+  }
 }
 
 @media screen and (width <= 767px) {
@@ -619,5 +626,9 @@ button {
 
   .film-cards {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .film-card {
+    max-width: 320px;
   }
 }
