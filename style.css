@@ -3,6 +3,7 @@
 :root {
   /* Backgrounds */
   --color-bg-dark: #0b0c10;
+  --color-bg-dark-transparent: #0b0c10fc;
   --color-bg-card: #1f1f1f;
   --color-bg-card-transparent: #1f1f1f99;
   --color-overlay: rgba(0, 0, 0, 0.65);
@@ -80,6 +81,25 @@
   }
 }
 
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 100%;
+    stroke-width: 1;
+  }
+  30% {
+    stroke-dashoffset: 0;
+    stroke-width: 1;
+  }
+  70% {
+    stroke-dashoffset: 0;
+    stroke-width: 1;
+  }
+  100% {
+    stroke-dashoffset: 100%;
+    stroke-width: 1;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -135,25 +155,6 @@ button {
   stroke-dasharray: 100%;
   stroke-dashoffset: 100%;
   animation: draw 4s linear infinite;
-}
-
-@keyframes draw {
-  0% {
-    stroke-dashoffset: 100%;
-    stroke-width: 1;
-  }
-  30% {
-    stroke-dashoffset: 0;
-    stroke-width: 1;
-  }
-  70% {
-    stroke-dashoffset: 0;
-    stroke-width: 1;
-  }
-  100% {
-    stroke-dashoffset: 100%;
-    stroke-width: 1;
-  }
 }
 
 .loader-container {
@@ -449,6 +450,28 @@ button {
   opacity: 0.5;
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: opacity 0.25s, transform 0.2s ease-in-out;
+
+  z-index: 999;
+}
+
+.hamburger:hover {
+  transform: translateY(2.5px);
+  opacity: 0.75;
+}
+
+.hamburger-item {
+  width: 1.5rem;
+  height: 0.25rem;
+  background-color: var(--color-text-primary);
+  border-radius: 1rem;
+}
+
 .hero {
   display: grid;
   grid-template-columns: 1.25fr 1fr;
@@ -523,14 +546,13 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  justify-items: center;
+  place-items: center;
 }
 
 .film-card {
   position: relative;
   width: 100%;
   max-width: 480px;
-  /* min-width: 300px; */
   height: auto;
   aspect-ratio: 9 / 12;
   border-radius: 0.25rem;
@@ -578,9 +600,11 @@ button {
   .header {
     gap: 15vh;
   }
+}
 
+@media screen and (width <= 960px) {
   .film-cards {
-    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -598,18 +622,18 @@ button {
     flex-wrap: wrap;
   }
 
-  .main-nav > :nth-child(1) {
+  /* .main-nav > :nth-child(1) {
     order: 1;
-  }
+  } */
 
-  .main-nav > :nth-child(2) {
+  .main-nav > .nav-list {
     order: 3;
     flex-basis: 100%;
   }
 
-  .main-nav > :nth-child(3) {
+  /* .main-nav > :nth-child(3) {
     order: 2;
-  }
+  } */
 
   .sub-nav .nav-item:has(.nav-hint):hover .nav-hint {
     visibility: hidden;
@@ -625,10 +649,81 @@ button {
   }
 
   .film-cards {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (width <= 576px) {
+  html:has(.hamburger.active) {
+    overflow-y: hidden;
   }
 
-  .film-card {
-    max-width: 320px;
+  .main-nav > .nav-list {
+    order: inherit;
+    flex-basis: inherit;
+  }
+
+  .main-nav > .hamburger {
+    order: -1;
+  }
+
+  .main-nav > .nav-list {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-2.5rem);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--color-bg-dark-transparent);
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    padding-top: 10rem;
+    /* align-items: center;
+    justify-content: center; */
+
+    z-index: 10;
+
+    transition: transform 0.5s, opacity 0.5s ease-in-out,
+      visibility 0.75s linear;
+  }
+
+  .nav-list.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    overflow: hidden;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger-item {
+    transform-origin: left;
+    transition: opacity 0.5s, transform 0.5s ease-in-out,
+      visibility 0.75s linear;
+  }
+
+  .hamburger.active > .hamburger-item:nth-child(2) {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .hamburger.active > .hamburger-item:nth-child(1) {
+    transform: rotateZ(45deg) scaleX(1.2);
+  }
+
+  .hamburger.active > .hamburger-item:nth-child(3) {
+    transform: rotateZ(-45deg) scaleX(1.2);
+  }
+}
+
+@media screen and (width <= 400px) {
+  .film-cards {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
